@@ -1,4 +1,4 @@
-"<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,21 +25,36 @@
 
     <body>
         <container>
-            <div class="list-group col-3">
-                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            <div class="row">
+                <div class="list-group col-3">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
 
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">Atlanta</a>
-                <a href="#" class="list-group-item list-group-item-action">Miami</a>
-                <a href="#" class="list-group-item list-group-item-action">Las Vegas</a>
-                <a class="list-group-item list-group-item-action disabled">Columbus</a>
-                <a href="#" class="list-group-item list-group-item-action">Atlanta</a>
-                <a href="#" class="list-group-item list-group-item-action">Miami</a>
-                <a href="#" class="list-group-item list-group-item-action">Las Vegas</a>
-                <a class="list-group-item list-group-item-action disabled">Columbus</a>
-                <span class="col-9 placeholder"></span>
-                <span id=test class="col-9 placeholder"></span>
-                <span class="col-9 placeholder"></span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">Atlanta</a>
+                    <a href="#" class="list-group-item list-group-item-action">Miami</a>
+                    <a href="#" class="list-group-item list-group-item-action">Las Vegas</a>
+                    <a class="list-group-item list-group-item-action disabled">Columbus</a>
+                    <a href="#" class="list-group-item list-group-item-action">Atlanta</a>
+                    <a href="#" class="list-group-item list-group-item-action">Miami</a>
+                    <a href="#" class="list-group-item list-group-item-action">Las Vegas</a>
+                    <a class="list-group-item list-group-item-action disabled">Columbus</a>
+                </div>
+                <!-- <div class="card mb-3" style="max-width: 540px;"> -->
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title" id="city">Card title</h5>
+                            <p class="card-text" id="temp">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text" id="windspeed"></p>
+                            <p class="card-text" id="humidity"></p>
+                            <p class="card-text" id="uvIndex"></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </container>
 
@@ -47,55 +62,50 @@
 
         <div class="card-group" style="width: 78rem">
             <div class="card">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <img id="icon0" class="card-img-top" alt="weather icon" style="width: 5rem">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title" id="date0">Card title</h5>
+                    <p id="temp0">TEMP:</p>
+                    <p id="windspeed0">WINDSPEED:</p>
+                    <p id="humidity0">HUMIDITY:</p>
                 </div>
             </div>
             <div class="card">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <img id="icon8" class="card-img-top" alt="weather icon" style="width: 5rem">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title" id="date8">Card title</h5>
+                    <p id="temp8">TEMP:</p>
+                    <p id="windspeed8">WINDSPEED:</p>
+                    <p id="humidity8">HUMIDITY:</p>
                 </div>
             </div>
             <div class="card">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <img id="icon16" class="card-img-top" alt="weather icon" style="width: 5rem">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title" id="date16">Card title</h5>
+                    <p id="temp16">TEMP:</p>
+                    <p id="windspeed16">WINDSPEED:</p>
+                    <p id="humidity16">HUMIDITY:</p>
                 </div>
             </div>
             <div class="card">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <img id="icon24" class="card-img-top" alt="weather icon" style="width: 5rem">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title" id="date24">Card title</h5>
+                    <p id="temp24">TEMP:</p>
+                    <p id="windspeed24">WINDSPEED:</p>
+                    <p id="humidity24">HUMIDITY:</p>
                 </div>
             </div>
             <div class="card">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <img id="icon32" class="card-img-top" alt="weather icon" style="width: 5rem">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title" id="date32">Card title</h5>
+                    <p id="temp32">TEMP:</p>
+                    <p id="windspeed32">WINDSPEED:</p>
+                    <p id="humidity32">HUMIDITY:</p>
                 </div>
             </div>
-
         </div>
 
 
