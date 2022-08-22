@@ -14,10 +14,19 @@
 // console.log(data);
 // })
         
-function populateWeather() {
+function populateWeather(event) {
 
+    event.preventDefault();
     var queryinput = document.getElementById("search-button").value;
 
+    // if (event) {
+    //     event.preventDefault();
+    // }
+    // var queryinput = document.getElementById("search-button").value;
+
+    // if (!queryinput) {
+    //     queryinput = 'Columbus';
+    // }
     console.log(queryinput);
 
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + (queryinput) + '&exclude=minutely,hourly&units=imperial&appid=d143de80350b7aaab11bcd65acbca5c0')
