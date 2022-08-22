@@ -16,11 +16,11 @@
         
 function populateWeather() {
 
-    var queryinput = Document.getElementById("search-button").value;
+    var queryinput = document.getElementById("search-button").value;
 
     console.log(queryinput);
 
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+queryinput+'&exclude=minutely,hourly&units=imperial&appid=d143de80350b7aaab11bcd65acbca5c0')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + (queryinput) + '&exclude=minutely,hourly&units=imperial&appid=d143de80350b7aaab11bcd65acbca5c0')
         .then(function (response) {
             return response.json()
         })
@@ -53,7 +53,7 @@ function populateWeather() {
             console.log(error)
         })
 
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + (queryinput) + "imperial&appid=d143de80350b7aaab11bcd65acbca5c0")
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + (queryinput) + "&exclude=minutely,hourly&units=imperial&appid=d143de80350b7aaab11bcd65acbca5c0")
         .then(function (response) {
             return response.json()
         })
