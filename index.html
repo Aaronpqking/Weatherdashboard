@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>Weather Dashboard</title>
 </head>
 <div>
@@ -17,8 +17,8 @@
         <div class="container-fluid">
             <a class="navbar-brand">Weather Dashboard</a>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" id="search-button" placeholder="Search" aria-label="Search">
+                <button onclick="populateWeather()" class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
     </nav>
@@ -42,7 +42,7 @@
                 <!-- <div class="card mb-3" style="max-width: 540px;"> -->
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
+                        <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
