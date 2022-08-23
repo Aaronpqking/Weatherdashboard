@@ -6,13 +6,13 @@
 //         console.log(data);
 //     })
 
-// fetch('https://api.openweathermap.org/data/2.5/forecast?q=Columbus&units=imperial&appid=d143de80350b7aaab11bcd65acbca5c0')
-// .then(function (response) {
-//     return response.json()
-// })
-// .then(function (data) {
-// console.log(data);
-// })
+fetch('https://api.openweathermap.org/data/2.5/forecast?q=Columbus&units=imperial&appid=d143de80350b7aaab11bcd65acbca5c0')
+.then(function (response) {
+    return response.json()
+})
+.then(function (data) {
+console.log(data);
+})
         
 function populateWeather(event) {
 
