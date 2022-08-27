@@ -1,4 +1,5 @@
 
+
 function onPageLoad(previousCity) {
 
     fetch("https://api.openweathermap.org/data/2.5/weather?q=" + previousCity + "&units=imperial&appid=d143de80350b7aaab11bcd65acbca5c0")
@@ -8,16 +9,17 @@ function onPageLoad(previousCity) {
         .then(function (data) {
             var city = data.name;
             var date = new Date(data.dt).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" });
-            var windspeed = document.createElement("h2");
-            windspeed.textContent = data.wind.speed;
+            var windspeed  = data.wind.speed;
             var temp = data.main.temp;
             var icon = data.weather[0].icon;
             var humidity = data.main.humidity;
+            var currenttime = moment().hour();
+            var currentDay = moment().format("LLLL");
 
             document.getElementById("date").innerText = date;
             document.getElementById("city").textContent = city;
             document.getElementById("temp").innerText = "TEMP:" + " " + temp;
-            document.getElementById("windspeed").append(windspeed);
+            document.getElementById("windspeed").textContent = "Windspeed:" + " " + windspeed;
             document.getElementById("humidity").textContent = "Humidity:" + " " + humidity;
             document.getElementById("icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
             console.log(data);
@@ -32,7 +34,7 @@ function onPageLoad(previousCity) {
                 var day = data.list[i];
                 var temp = day.main.temp;
                 var city = data.city.name;
-                var date = new Date(data.list[i].dt_txt).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" });
+                var date = new Date(data.list[i].dt_txt).toLocaleDateString('en-us', { weekday: "long", month: "short", day: "numeric" });
                 var windspeed = data.list[i].wind.speed;
                 var icon = data.list[i].weather[0].icon;
                 var humidity = data.list[i].main.humidity;
