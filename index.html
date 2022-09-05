@@ -13,19 +13,9 @@
     <link rel="stylesheet" href="style.css" />
     <title>Weather Dashboard</title>
 </head>
-<!-- <div>
-    <nav class="navbar bg-success">
-        <div class=" containgier-fluid">
-            <a class="navbar-brand" id="currentDay">Weather Dashboard</a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" id="search-button" placeholder="Search" aria-label="Search">
-                <button onclick="search()" class="btn btn-outline-success" type="button">Search</button>
 
-            </form>
-        </div>
-    </nav>
-</div> -->
-<!-- <script>$('.dropdown-toggle').dropdown()</script> -->
+<body>
+
 <nav class="navbar navbar-expand-lg bg-warning" >
     <div class="container-fluid">
       <a class="navbar-brand" id="currentDay">Navbar</a>
@@ -34,12 +24,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" role="button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Search History
@@ -49,9 +33,6 @@
               
             </ul>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li> -->
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" id="search-button" type="search" placeholder="Search" aria-label="Search">
@@ -60,9 +41,11 @@
       </div>
     </div>
   </nav>
+
 <div>
 
-    <div class="jumbotron jumbotron-fluid bg-primary">
+    <div class="jumbotron jumbotron-fluid bg-primary" style="height: 60%; max-height: 65%">
+
         <div class="container">
           <h1 class="display-4" id="city">Weather Dashboard</h1>
           <img id="icon" alt=""></img>
@@ -70,6 +53,7 @@
           <p class="lead" id="windspeed"></p>
           <p class="lead" id="humidity"></p>
           <span id="UVI" class="badge badge-danger"></span>
+
         </div>
         </div>
     </div>
@@ -129,6 +113,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="./script.js"></script>
 
-    </body>
+</body>
 
 </html>

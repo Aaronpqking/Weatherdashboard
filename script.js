@@ -32,22 +32,19 @@ function pageLoad(queryinput) {
         })
         .then(function (data) {
             var city = data.name;
-            // var date = new Date(data.dt).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" });
             var windspeed = data.wind.speed;
             var temp = data.main.temp;
             var icon = data.weather[0].icon;
             var humidity = data.main.humidity;
-            // var currenttime = moment().hour();
             var currentDay = moment().format("LLLL");
             console.log(currentDay);
             
             document.getElementById("currentDay").innerText = currentDay;
-
-            // document.getElementById("date").innerText = date;
-            document.getElementById("city").textContent = city;
-            document.getElementById("temp").innerText = "TEMP: " + temp + String.fromCharCode(176) ;
-            document.getElementById("windspeed").textContent = "Windspeed: " + windspeed + " mph" ;
-            document.getElementById("humidity").textContent = "Humidity: " + humidity + "%"
+            document.getElementById("temp").style.color = "white";
+            document.getElementById("temp").innerText = temp + String.fromCharCode(176);
+            document.getElementById("city").innerText = city ;
+            document.getElementById("windspeed").innerText = "Windspeed: " + windspeed + " mph" ;
+            document.getElementById("humidity").innerText = "Humidity: " + humidity + "%"
             document.getElementById("icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
             console.log(data);
         
@@ -93,12 +90,8 @@ function pageLoad(queryinput) {
                 var windspeed = data.list[i].wind.speed;
                 var icon = data.list[i].weather[0].icon;
                 var humidity = data.list[i].main.humidity;
-                // var description = day.weather[0].description;
 
-                // document.getElementById("description").innerText = description;
-                // console.log(data.list[i].weather[0].description);
                 document.getElementById("date" + i).innerText = date;
-                document.getElementById("city").innerText = city;
                 document.getElementById("temp" + i).innerText = "TEMP: " + temp + String.fromCharCode(176);
                 document.getElementById("windspeed" + i).innerText = "Windspeed: " + windspeed + " mph";
                 document.getElementById("humidity" + i).innerText = "Humidity: " + humidity + "%";
