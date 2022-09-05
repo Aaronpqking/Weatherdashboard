@@ -15,7 +15,7 @@ function search() {
     searchHistory.push(queryinput);
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
     pageLoad(queryinput);
-    lsList();
+    lsList(queryinput);
 }
 
 
