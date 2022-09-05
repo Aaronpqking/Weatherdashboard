@@ -106,5 +106,6 @@ function lsList(city) {
     citybutton.setAttribute("value", city);
     citybutton.addEventListener("click", function () { pageLoad(city)});
     document.getElementById("cityHistory").appendChild(citybutton);
+    citybutton.className = "dropdown-item";
 }
 
