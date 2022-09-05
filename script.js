@@ -9,7 +9,6 @@ pageLoad(searchHistory[searchHistory.length - 1] || "columbus");
 
 // }
 
-
 function search() {
 
     var queryinput = document.getElementById("search-button").value;
