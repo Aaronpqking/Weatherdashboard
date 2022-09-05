@@ -5,101 +5,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>Weather Dashboard</title>
 </head>
-<div>
-    <nav class="navbar bg-primary">
+<!-- <div>
+    <nav class="navbar bg-success">
         <div class="container-fluid">
-            <a class="navbar-brand">Weather Dashboard</a>
+            <a class="navbar-brand" id="currentDay">Weather Dashboard</a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" id="search-button" placeholder="Search" aria-label="Search">
-                <button onclick="populateWeather(event)" class="btn btn-outline-success" type="submit">Search</button>
+                <button onclick="search()" class="btn btn-outline-success" type="button">Search</button>
+
             </form>
         </div>
     </nav>
+</div> -->
+<!-- <script>$('.dropdown-toggle').dropdown()</script> -->
+<nav class="navbar navbar-expand-lg bg-warning" >
+    <div class="container-fluid">
+      <a class="navbar-brand" id="currentDay">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <b class="caret"></b>
+            <ul class="dropdown-menu"id="cityHistory">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li> -->
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" id="search-button" type="search" placeholder="Search" aria-label="Search">
+          <button onclick="search()" class="btn btn-outline-success" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<div>
 
-    <body>
-        <container>
-            <div class="row">
-                <div id = "cityHistory" class="list-group col-3">
-                </div>
-            
-                <div class="card mb-3" style="min-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="./weather background.jpg" class="img-fluid rounded-start" alt="weather">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title" id="city">City</h5>
-                            <h5 class="card-text" id="temp">TEMP</h5>
-                            <h5 class="card-text" id="description">Description</h5>
-                            <h5 class="card-text" id="windspeed">Windspeed</h5>
-                            <h5 class="card-text" id="humidity">Humidity</h5>
-                            <h5 class="card-text" id="date">Please enter the city of your choice without adding the state or other values card with supporting text below as a natural
-                            </h5>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </container>
-
-        <div class="card-group" style="width: 78rem">
-            <div class="card">
-                <img id="icon0" class="card-img-top" alt="weather icon" style="width: 5rem">
-                <div class="card-body">
-                    <h5 class="card-title" id="date0">Card title</h5>
-                    <p id="temp0">TEMP:</p>
-                    <p id="windspeed0">WINDSPEED:</p>
-                    <p id="humidity0">HUMIDITY:</p>
-                </div>
-            </div>
-            <div class="card">
-                <img id="icon8" class="card-img-top" alt="weather icon" style="width: 5rem">
-                <div class="card-body">
-                    <h5 class="card-title" id="date8">Card title</h5>
-                    <p id="temp8">TEMP:</p>
-                    <p id="windspeed8">WINDSPEED:</p>
-                    <p id="humidity8">HUMIDITY:</p>
-                </div>
-            </div>
-            <div class="card">
-                <img id="icon16" class="card-img-top" alt="weather icon" style="width: 5rem">
-                <div class="card-body">
-                    <h5 class="card-title" id="date16">Card title</h5>
-                    <p id="temp16">TEMP:</p>
-                    <p id="windspeed16">WINDSPEED:</p>
-                    <p id="humidity16">HUMIDITY:</p>
-                </div>
-            </div>
-            <div class="card">
-                <img id="icon24" class="card-img-top" alt="weather icon" style="width: 5rem">
-                <div class="card-body">
-                    <h5 class="card-title" id="date24">Card title</h5>
-                    <p id="temp24">TEMP:</p>
-                    <p id="windspeed24">WINDSPEED:</p>
-                    <p id="humidity24">HUMIDITY:</p>
-                </div>
-            </div>
-            <div class="card">
-                <img id="icon32" class="card-img-top" alt="weather icon" style="width: 5rem">
-                <div class="card-body">
-                    <h5 class="card-title" id="date32">Card title</h5>
-                    <p id="temp32">TEMP:</p>
-                    <p id="windspeed32">WINDSPEED:</p>
-                    <p id="humidity32">HUMIDITY:</p>
-                </div>
             </div>
         </div>
+        <div class="card bg-primary">
+            <img id="icon8" class="card-img-top" alt="weather icon" style="width: 5rem">
+            <div class="card-body bg-light">
+                <h5 class="card-title" id="date8">Card title</h5>
+                <p id="temp8">TEMP:</p>
+                <p id="windspeed8">WINDSPEED:</p>
+                <p id="humidity8">HUMIDITY:</p>
+            </div>
+        </div>
+        <div class="card bg-primary">
+            <img id="icon16" class="card-img-top" alt="weather icon" style="width: 5rem">
+            <div class="card-body bg-light">
+                <h5 class="card-title" id="date16">Card title</h5>
+                <p id="temp16">TEMP:</p>
+                <p id="windspeed16">WINDSPEED:</p>
+                <p id="humidity16">HUMIDITY:</p>
+            </div>
+        </div>
+        <div class="card bg-primary">
+            <img id="icon24" class="card-img-top" alt="weather icon" style="width: 5rem">
+            <div class="card-body bg-light">
+                <h5 class="card-title" id="date24">Card title</h5>
+                <p id="temp24">TEMP:</p>
+                <p id="windspeed24">WINDSPEED:</p>
+                <p id="humidity24">HUMIDITY:</p>
+            </div>
+        </div>
+        <div class="card bg-primary">
+            <img id="icon32" class="card-img-top" alt="weather icon" style="width: 5rem">
+            <div class="card-body bg-light">
+                <h5 class="card-title" id="date32">Card title</h5>
+                <p id="temp32">TEMP:</p>
+                <p id="windspeed32">WINDSPEED:</p>
+                <p id="humidity32">HUMIDITY:</p>
+            </div>
 
-
-
+</div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
