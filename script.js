@@ -66,7 +66,7 @@ function pageLoad(queryinput) {
                     var UVIndex = data[0].value;
                     document.getElementById("UVI").innerText = "UV Index = " + UVIndex;
                     console.log(UVIndex);
-                    if (UVIndex < 8) {
+                    if (UVIndex < 4) {
                         document.getElementById("UVI").style.backgroundColor = "green";
                     } else if (UVIndex < 7) {
                         document.getElementById("UVI").style.backgroundColor = "yellow";
