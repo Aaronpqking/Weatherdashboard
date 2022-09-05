@@ -1,6 +1,8 @@
 
 var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 console.log(JSON.stringify(searchHistory));
+
+
 pageLoad(searchHistory[searchHistory.length - 1] || "columbus");
 
     for (var i = 0; i < searchHistory.length; i++) {
@@ -43,9 +45,9 @@ function pageLoad(queryinput) {
 
             // document.getElementById("date").innerText = date;
             document.getElementById("city").textContent = city;
-            document.getElementById("temp").innerText = "TEMP: " + temp + String.fromCharCode(176) + "Windspeed: " + windspeed + " mph" + "Humidity: " + humidity + "%";
-            // document.getElementById("windspeed").textContent = ;
-            // document.getElementById("humidity").textContent = 
+            document.getElementById("temp").innerText = "TEMP: " + temp + String.fromCharCode(176) ;
+            document.getElementById("windspeed").textContent = "Windspeed: " + windspeed + " mph" ;
+            document.getElementById("humidity").textContent = "Humidity: " + humidity + "%"
             document.getElementById("icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
             console.log(data);
         
@@ -64,8 +66,17 @@ function pageLoad(queryinput) {
                     var UVIndex = data[0].value;
                     document.getElementById("UVI").innerText = "UV Index = " + UVIndex;
                     console.log(UVIndex);
+                    if (UVIndex < 8) {
+                        document.getElementById("UVI").style.backgroundColor = "green";
+                    } else if (UVIndex < 7) {
+                        document.getElementById("UVI").style.backgroundColor = "yellow";
+                        document.getElementById("UVI").style.color = "black";
 
-                });
+                    } else {
+                        document.getElementById("UVI").style.backgroundColor = "red";
+                    }
+                })
+                
             console.log(data);
         })
     
