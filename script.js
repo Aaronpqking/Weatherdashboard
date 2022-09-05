@@ -1,4 +1,5 @@
 
+
 var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 console.log(JSON.stringify(searchHistory));
 pageLoad(searchHistory[searchHistory.length - 1] || "columbus");
@@ -104,6 +105,7 @@ function populateWeather(queryinput) {
 
 
 
+
     // if (!queryinput) {
     //     queryinput = 'Columbus';
     // }
@@ -126,8 +128,7 @@ function populateWeather(queryinput) {
                 // var description = day.weather[0].description;
                  
 
-                // document.getElementById("description").innerText = description;
-                // console.log(data.list[i].weather[0].description);
+
                 document.getElementById("date" + i).innerText = date;
                 document.getElementById("city").innerText = city;
                 document.getElementById("temp" + i).innerText = "TEMP:" + " " + temp;
@@ -150,14 +151,14 @@ function populateWeather(queryinput) {
         console.log(data);
 
          var city = data.name;
-        //  var date = new Date(data.list[i].dt_txt).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" });
+
          var windspeed = document.createElement("h2");
             windspeed.textContent = data.wind.speed;
         
          var icon = data.weather[0].icon;
          var humidity = data.main.humidity;
 
-        //  document.getElementById("date").innerText = date;
+
          document.getElementById("city").textContent = city;
          document.getElementById("temp").textContent = "TEMP:" + " " + temp;
          document.getElementById("windspeed").append(windspeed); 
@@ -165,13 +166,6 @@ function populateWeather(queryinput) {
          document.getElementById("icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
 
         })
-}
 
-function lsList(city) {
-    var citybutton = document.createElement("button");
-    citybutton.textContent = city;
-    citybutton.setAttribute("value", city);
-    citybutton.addEventListener("click", function () { pageLoad(city)});
-    document.getElementById("cityHistory").appendChild(citybutton);
 }
 
